@@ -54,7 +54,7 @@ function cleanUpView(){
 function renderView(contact) {
 	const contactInfo = document.querySelector(".contactinfo")
 
-	const html = `<div class="contactname">
+	const contact_info_doc = `<div class="contactname">
 		${contact.name}
 		<img
 			src="./img/profile.jpg"
@@ -72,14 +72,113 @@ function renderView(contact) {
 			<button class="button close" value="Close">Close</button>
 		</div>`	
 
-	contactInfo.insertAdjacentHTML("beforeend", html)
+	contactInfo.insertAdjacentHTML("beforeend", contact_info_div)
 
 }
 
 //function #6 cleanUpCreate
 function cleanUpCreate() {
-	const cards = document.querySelectorAll('.contactedit> div')
+	const cards = document.querySelectorAll('.contactedit > div')
 	for (const card of cards)
 		card.remove()
 }
 
+//function #7 renderCreate
+function renderCreate(){
+	const contactedit = document.querySelector('.contactedit')
+
+	const contact_form = `<div class="contactimg">
+	<img
+	  src="./img/profile.jpg"
+	  class="profilepic"
+	  alt="Profile picture"
+	/>
+  </div>
+  <div class="form">
+	<form>
+	  <div class="inputcontainer">
+		<input
+		  type="text"
+		  id="contactname"
+		  name="contactname"
+		  placeholder="Contact Name"
+		/>
+		<button
+		  class="extrafield"
+		  id="extranamefield"
+		  name="extranamefield"
+		>
+		  +
+		</button>
+	  </div>
+
+	  <div class="inputcontainer">
+		<input
+		  type="tel"
+		  id="contactphone"
+		  name="contactphone"
+		  placeholder="Contact Phone"
+		/>
+		<button
+		  class="extrafield"
+		  id="extraphonefield"
+		  name="extraphonefield"
+		>
+		  +
+		</button>
+	  </div>
+
+	  <div class="inputcontainer">
+		<input
+		  type="text"
+		  id="contactaddress"
+		  name="contactaddress"
+		  placeholder="Contact Address"
+		/>
+		<button
+		  class="extrafield"
+		  id="extraaddressfield"
+		  name="extraaddressfield"
+		>
+		  +
+		</button>
+	  </div>
+
+	  <div class="inputcontainer">
+		<input
+		  type="email"
+		  id="contactemail"
+		  name="contactemail"
+		  placeholder="Contact Email"
+		/>
+		<button
+		  class="extrafield"
+		  id="extraemailfield"
+		  name="extraemailfield"
+		>
+		  +
+		</button>
+	  </div>
+
+	  <div class="buttons">
+		<button
+		  type="submit"
+		  class="button save"
+		  id="savecontact"
+		  name="savecontact"
+		>
+		  Save Contact
+		</button>
+		<button
+		  type="reset"
+		  class="button cancel"
+		  id="cancel"
+		  name="cancel"
+		>
+		  Cancel
+		</button>
+	  </div>
+	</form>
+  </div>`
+  contactedit.insertAdjacentHTML('beforeend', contact_form)
+}
