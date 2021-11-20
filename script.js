@@ -55,23 +55,31 @@ function renderView(contact) {
 	const contactInfo = document.querySelector(".contactinfo")
 
 	const html = `<div class="contactname">
-	${contact.name}
+		${contact.name}
 		<img
 			src="./img/profile.jpg"
 			class="profilepic"
 			alt="Profile picture"
 		/>
-	</div>
-	<div class="contactemail">email: ${contact.email}</div>
-	<div class="contactphone">cell: ${contact.phone}</div>
-	<div class="contactaddress">
-		address: ${contact.address}
-	</div>
-	<div class="buttons">
-		<button class="button edit" value="Edit">Edit</button>
-		<button class="button close" value="Close">Close</button>
-	</div>`	
+		</div>
+		<div class="contactemail">email: ${contact.email}</div>
+		<div class="contactphone">cell: ${contact.phone}</div>
+		<div class="contactaddress">
+			address: ${contact.address}
+		</div>
+		<div class="buttons">
+			<button class="button edit" value="Edit">Edit</button>
+			<button class="button close" value="Close">Close</button>
+		</div>`	
 
 	contactInfo.insertAdjacentHTML("beforeend", html)
 
 }
+
+//function #6 cleanUpCreate
+function cleanUpCreate() {
+	const cards = document.querySelectorAll('.contactedit> div')
+	for (const card of cards)
+		card.remove()
+}
+
