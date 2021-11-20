@@ -9,8 +9,9 @@ const contactList = [ 
 		name: "Jessica Cruz",    
 		phone: "123-555-5555",    
 		address: "Portland Oregon",    
-		email: "greenlantern@watchtower.com",  
+		email: "greenlant,ern@watchtower.com",  
 	}
+	
 ]
 
 //index page
@@ -20,10 +21,8 @@ function cleanUpIndex() {
 	const cards = document.querySelectorAll('.contact')
 
 
-	for (let i = 0; i < cards.length; i++) {
-		const card = cards[i];
+	for (const card of cards)
 		card.remove()
-	}
 }
 //function #2 createSingleIndex
 function createSingleIndex(person) {
@@ -31,21 +30,24 @@ function createSingleIndex(person) {
 	return `<a href="page3.html"><div class="contact"><p>${name}</p></div></a>`
 }
 
-function renderIndex(contact_list) {
+//function #3 renderIndex 
+function renderIndex(contactList) {
 	const main = document.querySelector(".main")
 
-	for (const contact of contact_list) {
-		
+	for (const contact of contactList) {
+		const card = createSingleIndex(contact)	
+		main.insertAdjacentHTML("beforeend", card)
 	}
 }
 
 
-// function cleanUpView() {
-// 	let view_item = document.querySelector('.main')
-// 	view_item.remove()
-// }
+//View Page
 
-// function cleanUpCreate() {
-// 	let Create_item = document.querySelector('.main')
-// 	Create_item.remove()
+//function #4 cleanUpView
+function cleanUpView(){
+	const cards = document.querySelectorAll('.main > div')
+
+
+	for (const card of cards)
+		card.remove()
 }
