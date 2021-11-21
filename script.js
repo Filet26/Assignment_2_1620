@@ -9,7 +9,7 @@ const contactList = [ 
 		name: "Jessica Cruz",    
 		phone: "123-555-5555",    
 		address: "Portland Oregon",    
-		email: "greenlant,ern@watchtower.com",  
+		email: "greenlantern@watchtower.com",  
 	}
 	
 ]
@@ -54,7 +54,7 @@ function cleanUpView(){
 function renderView(contact) {
 	const contactInfo = document.querySelector(".contactinfo")
 
-	const contact_info_doc = `<div class="contactname">
+	const contact_info_div = `<div class="contactname">
 		${contact.name}
 		<img
 			src="./img/profile.jpg"
@@ -82,6 +82,7 @@ function cleanUpCreate() {
 	for (const card of cards)
 		card.remove()
 }
+
 
 //function #7 renderCreate
 function renderCreate(){
